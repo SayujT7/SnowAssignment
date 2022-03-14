@@ -32,10 +32,10 @@ function drawsnow(snow) {
 }
 
 function movesnow(snow) {
-    if (snow.y <= 700) {
-        snow.y++;
-        
-    } else if (snow.y >= 701) {
+    if (snow.y <= cnv.height) {
+        snow.y += randomInt(1,5);
+
+    } else if (snow.y > cnv.height) {
         snow.y = 0;
         snow.x = randomInt(0, 800)
     }
@@ -46,3 +46,4 @@ function teleport(snow) {
         snow.y = cnv.height;
     }
 }
+
