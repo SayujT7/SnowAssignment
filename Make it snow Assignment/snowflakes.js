@@ -2,9 +2,9 @@ function newRandomsnow() {
     return {
         x: randomInt(0, cnv.width),
         y: randomInt(0, cnv.height),
-        r: randomInt(3, 7),
+        r: randomDec(2, 5),
         color: "white",
-        v: randomInt(1, 10)
+        v: randomDec(1, 5)
     }
 }
 
@@ -22,7 +22,7 @@ function snowArray(total) {
 function drawsnow(snow) {
     fill("white");
     circle(snow.x, snow.y, snow.r, "fill");
-    snow.y += snow.v;
+    
 }
 
 function movesnow(snow) {
@@ -30,10 +30,6 @@ function movesnow(snow) {
         snow.y = 0;
         snow.x = randomInt(0, 800)
     }
+    snow.y += snow.v;
 }
 
-function teleport(snow) {
-    if (snow.y === 700) {
-        snow.y = cnv.height;
-    }
-}

@@ -4,7 +4,7 @@ let ctx = cnv.getContext("2d");
 cnv.width = 800;
 cnv.height = 700;
 
-let snow = snowArray(1);
+let snow = snowArray(100);
 
 requestAnimationFrame(draw);
 
